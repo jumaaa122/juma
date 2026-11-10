@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Montrez · Company Profile · Zimbabwe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=block">
+<style>
+/* ==========================================================================
+   Montrez · Company Profile · Zimbabwe
+   Four A4 portrait pages. "Chrome at altitude": night sky, polished metal,
+   soft light on the horizon. All copy is the approved copy, verbatim.
+   ========================================================================== */
+
+:root {
+  --ink:       #0B0C0F;
+  --midnight:  #12151B;
+  --gunmetal:  #2A2E36;
+  --steel:     #5B606B;
+  --titanium:  #9AA0AA;
+  --platinum:  #E4E6E9;
+  --ivory:     #FBFBF9;
+  --chrome: linear-gradient(100deg, #7d828c, #eef0f2 24%, #9da2ab 44%, #f7f8f9 60%, #8a8f98 80%, #d7dadf);
+  --chrome-v: linear-gradient(180deg, #7d828c, #eef0f2 24%, #9da2ab 44%, #f7f8f9 60%, #8a8f98 80%, #d7dadf);
+  --serif: "Cormorant Garamond", serif;
+  --sans:  "Jost", sans-serif;
+}
+
+@page { size: A4; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  background: #2b2e35;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 10.5pt;
+  line-height: 1.6;
+  color: var(--gunmetal);
+  font-kerning: normal;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1, "kern" 1;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  hyphens: manual;
+}
+
+@media screen {
+  body { padding: 12mm 0; }
+  .page { margin: 0 auto 12mm; box-shadow: 0 2mm 8mm rgba(0, 0, 0, .35); }
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: var(--ivory);
+  break-after: page;
+  page-break-after: always;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page:last-of-type { break-after: auto; page-break-after: auto; }
+
+p, li, dd, dt { text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+em { font-style: italic; }
+.nb { white-space: nowrap; }
+
+/* ---- Shared type ---------------------------------------------------------- */
+
+.label {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 7pt;
+  line-height: 1.4;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1.06;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.headline em { font-style: italic; font-weight: 300; }
+
+.chrome-rule { display: block; height: .3mm; background: var(--chrome); }
+
+/* ---- Running footer (pages 2-4) ------------------------------------------ */
+
+.foot {
+  position: absolute;
+  left: 20mm;
+  right: 20mm;
+  bottom: 12.5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 7pt;
+  line-height: 1.2;
+  letter-spacing: .05em;
+  color: var(--steel);
+}
+.folio {
+  font-weight: 400;
+  letter-spacing: .3em;
+  color: var(--steel);
+}
+.on-dark, .on-dark .folio { color: var(--titanium); }
+
+/* ==========================================================================
+   PAGE 1 · COVER
+   ========================================================================== */
+
+.cover { background: var(--ink); }
+
+.cover-sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    #0B0C0F 0mm,
+    #0D0F13 80mm,
+    #12151B 135mm,
+    #1B1F26 170mm,
+    #20242C 175.9mm,
+    #0F1115 176.1mm,
+    #0B0C0F 215mm,
+    #0B0C0F 297mm);
+}
+
+/* first light: a wide, low bloom resting on the horizon */
+.cover-dawn {
+  position: absolute; left: 0; right: 0; top: 116mm; height: 60mm;
+  background: radial-gradient(ellipse 64% 100% at 50% 100%,
+    rgba(228, 230, 233, .20) 0%,
+    rgba(228, 230, 233, .085) 38%,
+    rgba(228, 230, 233, .025) 70%,
+    rgba(228, 230, 233, 0) 100%);
+}
+.cover-reflect {
+  position: absolute; left: 10mm; right: 10mm; top: 176mm; height: 14mm;
+  background: radial-gradient(ellipse 50% 100% at 50% 0%,
+    rgba(228, 230, 233, .07) 0%,
+    rgba(228, 230, 233, 0) 100%);
+}
+
+.horizon {
+  position: absolute; left: 0; right: 0; height: .32mm;
+  background: linear-gradient(90deg,
+    rgba(154, 160, 170, .30) 0%,
+    rgba(228, 230, 233, .78) 22%,
+    #FBFBF9 50%,
+    rgba(228, 230, 233, .78) 78%,
+    rgba(154, 160, 170, .30) 100%);
+}
+.horizon::after {
+  content: ""; position: absolute; left: 18%; right: 18%; top: -1.3mm; height: 2.9mm;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%,
+    rgba(251, 251, 249, .30) 0%,
+    rgba(251, 251, 249, 0) 100%);
+}
+.cover .horizon { top: 175.84mm; }
+
+.cover-logo {
+  position: absolute;
+  width: 105.47mm;            /* the visible mark is 100 mm wide */
+  left: 52.27mm;
+  top: 79.5mm;
+}
+
+.cover-title {
+  position: absolute; left: 20mm; right: 20mm; top: 188.5mm;
+  text-align: center;
+}
+.cover-title .label { color: var(--titanium); text-indent: .3em; }   /* re-centres tracked caps */
+.tagline {
+  margin-top: 4.2mm;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 21pt;
+  line-height: 1.2;
+  color: var(--platinum);
+}
+.tagline em { font-weight: 300; }
+
+.cover-base {
+  position: absolute; left: 20mm; right: 20mm; bottom: 20mm;
+  text-align: center; text-indent: .3em;
+  color: var(--titanium);
+}
+
+/* ==========================================================================
+   PAGE 2 · WHO WE ARE
+   ========================================================================== */
+
+.p2-col {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 74mm;
+  background: linear-gradient(180deg, #12151B 0%, #101318 55%, #0C0E12 100%);
+}
+.p2-col::after {
+  content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: .3mm;
+  background: var(--chrome-v);
+  opacity: .55;
+}
+.p2-label { position: absolute; left: 20mm; top: 24mm; color: var(--titanium); }
+.p2-head {
+  position: absolute; left: 20mm; width: 49.5mm; top: 31mm;
+  font-size: 25pt;
+  color: var(--ivory);
+}
+.ln { display: block; }
+
+.p2-pull { position: absolute; left: 20mm; width: 49.5mm; bottom: var(--p2-bottom); }
+.p2-pull .chrome-rule { width: 14mm; margin-bottom: 6mm; }
+.pull {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 19pt;
+  line-height: 1.28;
+  color: var(--platinum);
+}
+
+.p2 { --p2-top: 33.9mm; --p2-bottom: 32mm; }
+.p2-main {
+  position: absolute; left: 87mm; right: 20mm; top: var(--p2-top); bottom: var(--p2-bottom);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.lead { font-size: 11.5pt; color: var(--gunmetal); }
+
+.route { margin-top: 3.5mm; }
+.arc { display: block; width: 103mm; height: 13mm; overflow: visible; }
+.steps {
+  list-style: none;
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 5mm;
+  margin-top: 1.5mm;
+}
+.step-head { font-family: var(--serif); line-height: 1.15; white-space: nowrap; }
+.step-head .num { font-weight: 300; font-size: 21pt; color: var(--steel); }
+.step-head .sep { font-weight: 300; font-size: 21pt; color: var(--titanium); padding: 0 .2mm; }
+.step-head .t { font-weight: 400; font-size: 15pt; color: var(--ink); }
+.step-text { margin-top: 2mm; }
+
+.promises {
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 7mm; row-gap: 4.5mm;
+  margin-top: 4mm;
+}
+.pr { position: relative; padding-top: 2.8mm; }
+.pr::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: .25mm;
+  background: var(--chrome);
+}
+.pr-t { font-weight: 400; color: var(--ink); }
+.pr-d { color: var(--gunmetal); }
+
+.p2 .foot { left: 87mm; }
+
+/* ==========================================================================
+   PAGE 3 · WHAT WE ARRANGE
+   ========================================================================== */
+
+.p3-head { position: absolute; left: 20mm; right: 20mm; top: 20mm; }
+.p3-head .headline { margin-top: 2.6mm; font-size: 30pt; }
+
+.p3-body {
+  position: absolute; left: 20mm; right: 20mm; top: 43mm;
+  display: flex; flex-direction: column;
+}
+
+.desks {
+  display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr;
+  column-gap: 4.6mm; row-gap: 5mm;
+}
+.desk { position: relative; display: flex; flex-direction: column; }
+.desk-frame { position: absolute; left: 0; top: 0; overflow: visible; z-index: 0; }
+.desk-main, .desk-stub { position: relative; z-index: 1; }
+.desk-main { flex: 1; padding: 4.4mm 4.5mm 3mm; }
+.desk-head { font-family: var(--serif); font-weight: 400; line-height: 1; white-space: nowrap; }
+.desk-head .rn { font-weight: 300; font-size: 20pt; color: var(--steel); }
+.desk-head .sep { font-weight: 300; font-size: 20pt; color: var(--titanium); padding: 0 .2mm; }
+.desk-head .dn { font-size: 14.5pt; color: var(--ink); }
+.desk-for { margin-top: 2.2mm; min-height: 33.6pt; color: var(--steel); }
+.desk-list { list-style: none; margin-top: 2mm; }
+.desk-list li { border-top: .2mm solid var(--platinum); padding: .2mm 0; color: var(--gunmetal); white-space: nowrap; }
+.desk-stub { height: 15.6mm; padding: 2.9mm 4.5mm 0; }
+.moment {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12pt;
+  line-height: 1.25;
+  color: var(--gunmetal);
+}
+
+.circle {
+  margin-top: 6.5mm;
+  padding: .3mm;
+  border-radius: 3mm;
+  background: var(--chrome);
+}
+.circle-in {
+  position: relative;
+  border-radius: 2.7mm;
+  padding: 4.7mm 8mm 4.9mm;
+  background: linear-gradient(112deg, #1C2027 0%, #14171D 34%, #0E1014 72%, #0B0C0F 100%);
+}
+.circle .label { color: var(--titanium); }
+.hallmark { position: absolute; right: 8mm; top: 4.1mm; width: 4.6mm; height: 4.6mm; overflow: visible; }
+.circle-text { margin-top: 2.2mm; color: var(--platinum); }
+
+.board {
+  position: relative;
+  margin-top: 6.5mm;
+  display: grid; grid-template-columns: 55.33mm 59.34mm 55.33mm;
+  border-bottom: .2mm solid var(--platinum);
+}
+.board::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: .25mm;
+  background: var(--chrome);
+}
+.board-cell { padding: 0 4mm; border-left: .2mm solid var(--platinum); }
+.board-cell:first-child { padding-left: 0; border-left: 0; }
+.board-cell:last-child { padding-right: 0; }
+.board-cell dt { padding: 2.6mm 0 2.1mm; border-bottom: .2mm solid var(--platinum); }
+.board-cell dd { padding: 2mm 0 2.6mm; color: var(--gunmetal); }
+
+/* ==========================================================================
+   PAGE 4 · A NOTE FROM THE DIRECTOR, AND BEGIN
+   ========================================================================== */
+
+.p4-letter { position: absolute; left: 0; right: 0; top: 0; height: 157mm; }
+.p4-mark { position: absolute; width: 39.55mm; left: 85.23mm; top: 16mm; }
+.p4-note { position: absolute; left: 40mm; width: 130mm; top: 49mm; }
+.letter { margin-top: 4.4mm; font-size: 11.5pt; color: var(--gunmetal); }
+.letter p + p { margin-top: 4.2mm; }
+.signoff { margin-top: 7.5mm; }
+.sig {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 27pt;
+  line-height: 1;
+  color: var(--ink);
+}
+.sig-title { margin-top: 2.6mm; }
+
+.p4-dark {
+  position: absolute; left: 0; right: 0; top: 157mm; bottom: 0;
+  background: linear-gradient(180deg, #161920 0%, #12151B 18%, #0D0F13 70%, #0B0C0F 100%);
+}
+.p4-dark .horizon { top: -.16mm; }
+.p4-dawn {
+  position: absolute; left: 0; right: 0; top: 0; height: 26mm;
+  background: radial-gradient(ellipse 62% 100% at 50% 0%,
+    rgba(228, 230, 233, .10) 0%,
+    rgba(228, 230, 233, .03) 55%,
+    rgba(228, 230, 233, 0) 100%);
+}
+.begin-head { position: absolute; left: 20mm; top: 17mm; font-size: 36pt; color: var(--ivory); }
+.begin-line { position: absolute; left: 20mm; right: 20mm; top: 37mm; }
+.begin-line .lead-in { display: block; font-size: 11pt; color: var(--titanium); }
+.prompts {
+  display: block; margin-top: 1.6mm;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 17pt; line-height: 1.3; color: var(--platinum);
+}
+.prompts .dot { font-style: normal; color: var(--steel); padding: 0 .9mm; }
+
+.cta {
+  position: absolute; left: 20mm; right: 20mm; top: 61mm;
+  display: grid; grid-template-columns: 55mm 1fr auto; align-items: last baseline; column-gap: 0;
+}
+.btn {
+  display: flex; align-items: center; justify-content: center;
+  height: 11.5mm; padding: 0 0 0 .3em;
+  border-radius: 5.75mm;
+  background: var(--chrome);
+  box-shadow: inset 0 0 0 .2mm rgba(255, 255, 255, .55);
+  font-family: var(--sans); font-weight: 400; font-size: 7.5pt;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.contact { padding-left: 10mm; }
+.contact + .contact { padding-left: 9mm; }
+.contact .label { color: var(--titanium); white-space: nowrap; }
+.contact a { display: block; margin-top: .8mm; font-size: 11pt; color: var(--platinum); white-space: nowrap; }
+
+.reg {
+  position: absolute; left: 20mm; top: 91mm;
+  font-size: 8pt; line-height: 1.6; color: var(--platinum);
+}
+.reg .label { color: var(--titanium); margin-bottom: .8mm; }
+</style>
+</head>
+<body>
+
+<!-- ======================================================================
+     PAGE 1 · COVER
+     ====================================================================== -->
+<section class="page cover" data-page="1">
+  <div class="cover-sky"></div>
+  <div class="cover-dawn"></div>
+  <div class="cover-reflect"></div>
+  <div class="horizon"></div>
+  <img class="cover-logo" src="assets/montrez-logo.png" alt="Montrez">
+  <div class="cover-title">
+    <p class="label" data-copy="p1.edition">Company Profile · Zimbabwe</p>
+    <p class="tagline" data-copy="p1.tagline">Private aviation, <em>personally arranged.</em></p>
+  </div>
+  <p class="label cover-base" data-copy="p1.base">Borrowdale · Harare · Zimbabwe</p>
+</section>
+
+<!-- ======================================================================
+     PAGE 2 · WHO WE ARE
+     ====================================================================== -->
+<section class="page p2" data-page="2">
+  <aside class="p2-col">
+    <p class="label p2-label" data-copy="p2.label">Montrez</p>
+    <h1 class="headline p2-head" data-copy="p2.headline"><span class="ln">Your journey,</span> <em><span class="ln">in one pair</span> <span class="ln">of hands.</span></em></h1>
+    <div class="p2-pull">
+      <span class="chrome-rule"></span>
+      <p class="pull" data-copy="p2.pull"><span class="ln">Leave a board</span> <span class="ln">meeting in Harare</span> <span class="ln">at two. Dine in</span> <span class="ln">Cape Town tonight.</span></p>
+    </div>
+  </aside>
+
+  <div class="p2-main">
+    <p class="lead" data-copy="p2.lead">Montrez arranges private flights for people whose time and privacy matter most. Our Harare office handles every detail of your journey, both in the air and on the ground. Each flight is operated by a fully licensed and insured operator chosen for your trip.</p>
+
+    <section class="how">
+      <p class="label" data-copy="p2.how">How it works</p>
+      <div class="route">
+        <svg class="arc" viewBox="0 0 103 13" aria-hidden="true">
+          <path d="M 1 11.6 Q 37.33 -6.4 73.67 11.6" fill="none" stroke="#9AA0AA" stroke-width=".24" stroke-dasharray=".9 1.05" stroke-linecap="round"/>
+          <circle cx="1" cy="11.6" r=".95" fill="#FBFBF9" stroke="#5B606B" stroke-width=".24"/>
+          <circle cx="37.33" cy="2.6" r=".95" fill="#FBFBF9" stroke="#5B606B" stroke-width=".24"/>
+          <circle cx="73.67" cy="11.6" r=".95" fill="#5B606B"/>
+        </svg>
+        <ol class="steps">
+          <li class="step">
+            <p class="step-head" data-copy="p2.s1.head"><span class="num">01</span> <span class="sep">·</span> <span class="t">Tell us</span></p>
+            <p class="step-text" data-copy="p2.s1.text">Share your destination, dates and number of guests. A short message is all we need.</p>
+          </li>
+          <li class="step">
+            <p class="step-head" data-copy="p2.s2.head"><span class="num">02</span> <span class="sep">·</span> <span class="t">Review</span></p>
+            <p class="step-text" data-copy="p2.s2.text">Receive a written proposal with aircraft options, timings and one <span class="nb">all-inclusive</span> price.</p>
+          </li>
+          <li class="step">
+            <p class="step-head" data-copy="p2.s3.head"><span class="num">03</span> <span class="sep">·</span> <span class="t">Travel</span></p>
+            <p class="step-text" data-copy="p2.s3.text">Confirm in writing and settle before departure. Your advisor stays with you until you are home.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="promise">
+      <p class="label" data-copy="p2.promise">Our promise</p>
+      <div class="promises">
+        <div class="pr"><p class="pr-t" data-copy="p2.pr1.t">One dedicated advisor.</p><p class="pr-d" data-copy="p2.pr1.d">Your single point of contact from first message to safe return.</p></div>
+        <div class="pr"><p class="pr-t" data-copy="p2.pr2.t">Nothing booked without your approval.</p><p class="pr-d" data-copy="p2.pr2.d">Every journey is confirmed by a written proposal and agreement.</p></div>
+        <div class="pr"><p class="pr-t" data-copy="p2.pr3.t">One <span class="nb">all-inclusive</span> price.</p><p class="pr-d" data-copy="p2.pr3.d">No hidden costs. Anything not included is clearly stated.</p></div>
+        <div class="pr"><p class="pr-t" data-copy="p2.pr4.t">Licensed and insured operators only.</p><p class="pr-d" data-copy="p2.pr4.d">Operator credentials are available on request.</p></div>
+        <div class="pr"><p class="pr-t" data-copy="p2.pr5.t">Complete discretion.</p><p class="pr-d" data-copy="p2.pr5.d">Your plans remain confidential, and we are happy to sign an NDA.</p></div>
+        <div class="pr"><p class="pr-t" data-copy="p2.pr6.t">Safety above all.</p><p class="pr-d" data-copy="p2.pr6.d">Every flight decision rests with the operator and captain. We never ask them to compromise.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot"><span data-copy="footer">Montrez Global Ventures (Private) Limited · Private &amp; Confidential</span><span class="folio" data-copy="folio">02</span></footer>
+</section>
+
+<!-- ======================================================================
+     PAGE 3 · WHAT WE ARRANGE
+     ====================================================================== -->
+<section class="page p3" data-page="3">
+  <header class="p3-head">
+    <p class="label" data-copy="p3.label">What we arrange</p>
+    <h2 class="headline" data-copy="p3.headline">Four desks. <em>One standard of care.</em></h2>
+  </header>
+
+  <div class="p3-body">
+    <div class="desks">
+      <article class="desk">
+        <div class="desk-main">
+          <h3 class="desk-head" data-copy="d1.head"><span class="rn">I</span> <span class="sep">·</span> <span class="dn">Private Clients</span></h3>
+          <p class="desk-for" data-copy="d1.for">For individuals and families who value their time and privacy.</p>
+          <ul class="desk-list">
+            <li data-copy="d1.i1">Private jet and helicopter charter</li>
+            <li data-copy="d1.i2">VIP airport facilitation</li>
+            <li data-copy="d1.i3">Chauffeured cars and hotel reservations</li>
+            <li data-copy="d1.i4">Personal assistants and translators</li>
+          </ul>
+        </div>
+        <div class="desk-stub"><p class="moment" data-copy="d1.moment">A family weekend at Victoria Falls, arranged from start to finish.</p></div>
+      </article>
+
+      <article class="desk">
+        <div class="desk-main">
+          <h3 class="desk-head" data-copy="d2.head"><span class="rn">II</span> <span class="sep">·</span> <span class="dn">Mining, Energy &amp; Industry</span></h3>
+          <p class="desk-for" data-copy="d2.for">For companies whose people and equipment must reach remote sites.</p>
+          <ul class="desk-list">
+            <li data-copy="d2.i1">Executive and crew flights to site</li>
+            <li data-copy="d2.i2">Helicopter access where there is no runway</li>
+            <li data-copy="d2.i3">Urgent delivery of parts and equipment</li>
+            <li data-copy="d2.i4">Specialised helicopter lifting</li>
+          </ul>
+        </div>
+        <div class="desk-stub"><p class="moment" data-copy="d2.moment">Fly from Harare to site and be home before dinner.</p></div>
+      </article>
+
+      <article class="desk">
+        <div class="desk-main">
+          <h3 class="desk-head" data-copy="d3.head"><span class="rn">III</span> <span class="sep">·</span> <span class="dn">Delegations &amp; Events</span></h3>
+          <p class="desk-for" data-copy="d3.for">For investor, trade and official delegations visiting Zimbabwe.</p>
+          <ul class="desk-list">
+            <li data-copy="d3.i1">Group charter flights</li>
+            <li data-copy="d3.i2">Landing, overflight and diplomatic permits</li>
+            <li data-copy="d3.i3">VIP welcome on arrival</li>
+            <li data-copy="d3.i4">Cars and hotels for every guest</li>
+          </ul>
+        </div>
+        <div class="desk-stub"><p class="moment" data-copy="d3.moment">Every guest cleared and welcomed on arrival in Harare.</p></div>
+      </article>
+
+      <article class="desk">
+        <div class="desk-main">
+          <h3 class="desk-head" data-copy="d4.head"><span class="rn">IV</span> <span class="sep">·</span> <span class="dn">Cargo &amp; Humanitarian</span></h3>
+          <p class="desk-for" data-copy="d4.for">For organisations moving cargo that cannot wait or will not fit.</p>
+          <ul class="desk-list">
+            <li data-copy="d4.i1">Heavy and outsize freight from 17 to 100 tonnes</li>
+            <li data-copy="d4.i2">Government, relief and mission airlift</li>
+            <li data-copy="d4.i3"><span class="nb">Time-critical</span> shipments</li>
+            <li data-copy="d4.i4">Permits and documentation managed</li>
+          </ul>
+        </div>
+        <div class="desk-stub"><p class="moment" data-copy="d4.moment">Delivered with the same care as every passenger.</p></div>
+      </article>
+    </div>
+
+    <div class="circle">
+      <div class="circle-in">
+        <svg class="hallmark" viewBox="0 0 46 46" aria-hidden="true">
+          <defs>
+            <linearGradient id="chromeRing" x1="0" y1="0" x2="1" y2=".36">
+              <stop offset="0" stop-color="#7d828c"/><stop offset=".24" stop-color="#eef0f2"/>
+              <stop offset=".44" stop-color="#9da2ab"/><stop offset=".6" stop-color="#f7f8f9"/>
+              <stop offset=".8" stop-color="#8a8f98"/><stop offset="1" stop-color="#d7dadf"/>
+            </linearGradient>
+          </defs>
+          <circle cx="23" cy="23" r="21.5" fill="none" stroke="url(#chromeRing)" stroke-width="2.2"/>
+          <circle cx="23" cy="23" r="15" fill="none" stroke="url(#chromeRing)" stroke-width="1.1" opacity=".75"/>
+        </svg>
+        <p class="label" data-copy="p3.circle.label">The Montrez Circle</p>
+        <p class="circle-text" data-copy="p3.circle.text">Returning clients are invited into the Montrez Circle. Members receive preferred rates on repeat journeys, priority planning and a travel profile that remembers every preference. When you introduce someone to Montrez, we thank you on your next journey.</p>
+      </div>
+    </div>
+
+    <dl class="board">
+      <div class="board-cell">
+        <dt class="label" data-copy="p3.owners.label">For aircraft owners</dt>
+        <dd data-copy="p3.owners.text">Leasing, maintenance coordination, refuelling, hangarage and flight dispatch.</dd>
+      </div>
+      <div class="board-cell">
+        <dt class="label" data-copy="p3.zim.label">Across Zimbabwe</dt>
+        <dd data-copy="p3.zim.text"><span class="nb">Harare ·</span> <span class="nb">Victoria Falls ·</span> <span class="nb">Bulawayo ·</span> <span class="nb">Kariba ·</span> <span class="nb">Hwange ·</span> Mine sites and private airstrips</dd>
+      </div>
+      <div class="board-cell">
+        <dt class="label" data-copy="p3.beyond.label">Beyond</dt>
+        <dd data-copy="p3.beyond.text"><span class="nb">Johannesburg ·</span> <span class="nb">Cape Town ·</span> <span class="nb">Lusaka ·</span> <span class="nb">Maputo ·</span> Across Africa and internationally</dd>
+      </div>
+    </dl>
+  </div>
+
+  <footer class="foot"><span data-copy="footer">Montrez Global Ventures (Private) Limited · Private &amp; Confidential</span><span class="folio" data-copy="folio">03</span></footer>
+</section>
+
+<!-- ======================================================================
+     PAGE 4 · A NOTE FROM THE DIRECTOR, AND BEGIN
+     ====================================================================== -->
+<section class="page p4" data-page="4">
+  <div class="p4-letter">
+    <img class="p4-mark" src="assets/montrez-logo.png" alt="Montrez">
+    <div class="p4-note">
+    <p class="label" data-copy="p4.label">A note from the Director</p>
+    <div class="letter">
+      <p data-copy="p4.l1">Private aviation should feel effortless. Too often it does not. Quotes arrive late, details are lost between suppliers and nobody owns the outcome.</p>
+      <p data-copy="p4.l2">I founded Montrez to change that. When you travel with us, one person takes responsibility for your entire journey, from your first message to the moment you are home. You will always know the price, the plan and the person in charge.</p>
+      <p data-copy="p4.l3">This is the standard we hold ourselves to on every flight. I would be glad to show you what it feels like.</p>
+    </div>
+    <div class="signoff">
+      <p class="sig" data-copy="p4.sig">Jonah Juma</p>
+      <p class="label sig-title" data-copy="p4.title">Director</p>
+    </div>
+    </div>
+  </div>
+
+  <div class="p4-dark">
+    <div class="p4-dawn"></div>
+    <div class="horizon"></div>
+    <h2 class="headline begin-head" data-copy="p4.headline">Begin with <em>a message.</em></h2>
+    <p class="begin-line" data-copy="p4.line"><span class="lead-in">To begin, simply send us:</span> <span class="prompts"><span class="nb">Where <span class="dot">·</span></span> <span class="nb">When <span class="dot">·</span></span> <span class="nb">How many <span class="dot">·</span></span> <span class="nb">Anything we should know</span></span></p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/27764427080" data-copy="p4.button">Message on WhatsApp</a>
+      <div class="contact">
+        <p class="label" data-copy="p4.wa.label">WhatsApp and direct line</p>
+        <a href="https://wa.me/27764427080" data-copy="p4.wa">+27 76 442 7080</a>
+      </div>
+      <div class="contact">
+        <p class="label" data-copy="p4.email.label">Email</p>
+        <a href="mailto:j.a.juma@1st23rdgroup.com" data-copy="p4.email">j.a.juma@1st23rdgroup.com</a>
+      </div>
+    </div>
+    <div class="reg">
+      <p class="label" data-copy="p4.reg1">A registered company in Zimbabwe</p>
+      <p data-copy="p4.reg2">Montrez Global Ventures (Private) Limited</p>
+      <p data-copy="p4.reg3">Company No. 148003A02112026</p>
+      <p data-copy="p4.reg4">Registered office: 85 Deacon Drive, Borrowdale, Harare</p>
+    </div>
+  </div>
+
+  <footer class="foot on-dark"><span data-copy="p4.footer">Montrez Global Ventures (Private) Limited · Private &amp; Confidential</span><span class="folio" data-copy="folio">04</span></footer>
+</section>
+
+<script>
+/* Boarding-pass frames: a rounded ticket outline with two half-moon notches
+   and a dotted perforation where the stub (the moment) meets the card.
+   Drawn after the fonts settle so the notches sit exactly on the tear line. */
+(function () {
+  const MM = 96 / 25.4;
+  function frames() {
+    document.querySelectorAll('.desk').forEach(function (desk) {
+      const old = desk.querySelector('.desk-frame');
+      if (old) old.remove();
+      const w = desk.offsetWidth, h = desk.offsetHeight;
+      const py = desk.querySelector('.desk-stub').offsetTop;
+      const r = 1.6 * MM, n = 2.3 * MM;
+      const d = [
+        'M', r, 0, 'H', w - r, 'A', r, r, 0, 0, 1, w, r,
+        'V', py - n, 'A', n, n, 0, 0, 0, w, py + n,
+        'V', h - r, 'A', r, r, 0, 0, 1, w - r, h,
+        'H', r, 'A', r, r, 0, 0, 1, 0, h - r,
+        'V', py + n, 'A', n, n, 0, 0, 0, 0, py - n,
+        'V', r, 'A', r, r, 0, 0, 1, r, 0, 'Z'
+      ].join(' ');
+      const ns = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('class', 'desk-frame');
+      svg.setAttribute('width', w);
+      svg.setAttribute('height', h);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      svg.setAttribute('aria-hidden', 'true');
+      const body = document.createElementNS(ns, 'path');
+      body.setAttribute('d', d);
+      body.setAttribute('fill', '#FFFFFF');
+      body.setAttribute('stroke', '#D5D8DC');
+      body.setAttribute('stroke-width', 0.26 * MM);
+      svg.appendChild(body);
+      const perf = document.createElementNS(ns, 'line');
+      perf.setAttribute('x1', n + 2.2 * MM);
+      perf.setAttribute('x2', w - n - 2.2 * MM);
+      perf.setAttribute('y1', py);
+      perf.setAttribute('y2', py);
+      perf.setAttribute('stroke', '#9AA0AA');
+      perf.setAttribute('stroke-width', 0.5 * MM);
+      perf.setAttribute('stroke-linecap', 'round');
+      perf.setAttribute('stroke-dasharray', '0.01 ' + (1.55 * MM));
+      svg.appendChild(perf);
+      desk.insertBefore(svg, desk.firstChild);
+    });
+  }
+  /* Keep the last two words of each paragraph together, so no line of
+     copy ever ends on a single orphaned word.  Text is untouched: the two
+     words are simply wrapped in a no-wrap span. */
+  function widont() {
+    document.querySelectorAll('[data-copy]').forEach(function (el) {
+      if (el.querySelector('.ln') || el.closest('.label, .foot, .desk-head, .step-head, .desk-list, .btn, .contact, .sig')) return;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      const t = nodes[nodes.length - 1];
+      if (!t || t.parentElement.closest('.nb')) return;
+      const s = t.textContent;
+      const m = s.match(/(\S+)(\s+)(\S+)(\s*)$/);
+      if (!m) return;
+      const start = s.length - m[0].length;
+      const span = document.createElement('span');
+      span.className = 'nb';
+      span.textContent = m[1] + m[2] + m[3];
+      const before = document.createTextNode(s.slice(0, start));
+      const after = document.createTextNode(m[4]);
+      t.replaceWith(before, span, after);
+    });
+  }
+  /* Baseline alignment on page 2: the lead hangs from the headline's first
+     baseline, and the pull line ends on the same baseline as the promises. */
+  function baseline(el, which) {
+    const probe = document.createElement('span');
+    probe.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline';
+    const host = which === 'last' ? (el.querySelector('.ln:last-child') || el) : el;
+    if (which === 'last') host.appendChild(probe); else host.insertBefore(probe, host.firstChild);
+    const y = probe.getBoundingClientRect().top;
+    probe.remove();
+    return y;
+  }
+  function alignBaselines() {
+    const main = document.querySelector('.p2-main');
+    const head = document.querySelector('.p2-head');
+    const lead = document.querySelector('.lead');
+    const dTop = baseline(head, 'first') - baseline(lead, 'first');
+    main.style.top = (main.offsetTop + dTop) + 'px';
+    const pull = document.querySelector('.p2-pull');
+    const lastPromise = document.querySelector('.promises .pr:last-child .pr-d');
+    const dBottom = baseline(lastPromise, 'last') - baseline(pull.querySelector('.pull'), 'last');
+    const page = pull.offsetParent.getBoundingClientRect();
+    const box = pull.getBoundingClientRect();
+    pull.style.bottom = (page.bottom - box.bottom - dBottom) + 'px';
+  }
+  document.fonts.ready.then(function () {
+    widont();
+    alignBaselines();
+    frames();
+    document.documentElement.setAttribute('data-ready', '1');
+  });
+})();
+</script>
+</body>
+</html>
